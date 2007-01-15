@@ -1,5 +1,37 @@
 #!/usr/bin/env python
 
+"""
+ RunView.py
+ A simple PyGTK application which displays Nike+ iPod running data.
+ Copyright (C) 2007 Matthew Colyer
+"""
+
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
+# USA
+
+####################################################################
+# Change the values below to match your system
+
+IPOD_DIR="/media/ipod" # The place where your ipod is mounted
+
+NIKE_PLUS_ID="" # Your Nike+ Serial number goes here. You can find it under
+                # your ipod in /iPod_Control/Device/Trainer/Workouts/Empeds/
+
+# Stop modifying here
+####################################################################
+
 import os
 import gtk
 import xml.dom.minidom
@@ -8,8 +40,6 @@ import re
 
 from SimpleGladeApp import SimpleGladeApp
 
-IPOD_DIR="/media/ipod" # The place where your ipod is mounted
-NIKE_PLUS_ID="" # Your Nike+ Serial number goes here you can find it under your ipod in /iPod_Control/Device/Trainer/Workouts/Empeds/
 NIKE_PLUS_DATA_NEW="/iPod_Control/Device/Trainer/Workouts/Empeds/"+NIKE_PLUS_ID+"/latest/"
 NIKE_PLUS_DATA_OLD="/iPod_Control/Device/Trainer/Workouts/Empeds/"+NIKE_PLUS_ID+"/synched/"
 
